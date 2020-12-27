@@ -120,7 +120,9 @@ import os
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+import sys
+if sys.argv[1] != 'runserver':
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT= os.path.join(BASE_DIR, "media_cdn")
 MEDIA_URL="/media/"
 
